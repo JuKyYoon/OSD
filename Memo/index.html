@@ -3,10 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Memo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
     <style>
         #id {
             position: fixed;
@@ -17,33 +18,88 @@
             margin-bottom: 40px;
             z-index: 900;
         }
+      hr {
+        border:none;
+      }
+      .mdl-card {
+        width: 90%
+      }
     </style>
+    
 </head>
 <body>
     <!-- Simple header with fixed tabs. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-                    mdl-layout--fixed-tabs">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-            <!-- Title -->
-                <span class="mdl-layout-title">오소메모장</span>
+            
+                <span class="mdl-layout-title">Memo</span>
+    
+                <div class="mdl-layout-spacer"></div>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                              mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon"
+                           for="fixed-header-drawer-exp">
+                      <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                      <input class="mdl-textfield__input" type="text" name="sample"
+                             id="fixed-header-drawer-exp">
+                    </div>
+                  </div>
             </div>
-            <!-- Tabs -->
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
                 <a href="#fixed-tab-1" class="mdl-layout__tab is-active">메모</a>
                 <a href="#fixed-tab-2" class="mdl-layout__tab">식단</a>
                 <a href="#fixed-tab-3" class="mdl-layout__tab">버스시간</a>
             </div>
         </header>
+<!--
+        <div class="mdl-layout__drawer">
+    <span class="mdl-layout__title">메뉴</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">내보내기</a>
+      <a class="mdl-navigation__link" href="#">동기화</a>
+      <a class="mdl-navigation__link" href="#">로그아웃</a>
+    </nav>
+  </div>
+-->
+       
+        
+        
+        
         <main class="mdl-layout__content">
             <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
                 <div class="page-content">
-                    <div class="mdl-demo mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                   <hr>
+                    <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand">
-                            <h2 class="mdl-card__title-text">제목</h2>
+                            <h2 class="mdl-card__title-text">오픈소스SW개발</h2>
                         </div>
                         <div class="mdl-card__supporting-text">
-                            미리보기
+                            오픈소스 소프트웨어 및 라이브러리를 활용하여 오픈소스 소프트웨어를...
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <button id="show-info" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            내용보기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dialog-container" style="position: relative;
+width: 90%;
+margin: 10% auto;
+z-index: 99999;
+padding: 16px 16px 0;"><div class="mdl-card mdl-grid mdl-shadow--16dp"><h5>오픈소스SW개발</h5><p>오픈소스 소프트웨어 및 라이브러리를 활용하여 오픈소스 소프트웨어를 개발합니다. 다양한 오픈소스 태크놀러지 스택들을 소개하고 기본적인 사용법을 알아봅니다. 프로젝트 기반의 수업을 통해 수업시간에 다룬 오픈소스 프로젝트 및 기술들을 선택하고 조합하여 자신만의 태크 스택을 설계합니다.</p>
+                   <p>
+                     2017.03.21
+                   </p></div></div>
+                    <hr>
+                    <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">OSS Web frontends: ES6-based frameworks</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Concept of WebComponents / Polymer / React / electron as...
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -51,25 +107,13 @@
                             </a>
                         </div>
                     </div>
+                    <hr>
                     <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand">
-                            <h2 class="mdl-card__title-text">제목</h2>
+                            <h2 class="mdl-card__title-text">OSS Web backends</h2>
                         </div>
                         <div class="mdl-card__supporting-text">
-                            미리보기
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            내용보기
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                        <div class="mdl-card__title mdl-card--expand">
-                            <h2 class="mdl-card__title-text">제목</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            미리보기
+                            node.js / Django / Codeigniter * Learn by run: Prototyping...
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
@@ -79,22 +123,179 @@
                     </div>
                 </div>
                 <!-- Colored FAB button with ripple -->
-                <button id="id" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <a id="id" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" href="/new">
                 <i class="material-icons">add</i>
-                </button>
+                </a>
             </section>
             <section class="mdl-layout__tab-panel " id="fixed-tab-2">
             <div class="page-content">
-                <p>준비중입니다.</p>
+                <hr>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">[특식] 소고기장터국밥&당면사리, 푸실리오리엔탈샐러드, 깍두기</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        3,000원
+                    </div>
+                </div>
+                <hr>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">[특식] 백선생짜글이&스크램블에그비빔밥, 두부미소장국, 푸실리오리엔탈샐러드, 깍두기</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        3,500원
+                    </div>
+                </div>
+                <hr>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">[양식] 치즈돈까스&추가밥&허니버터감자튀김, 두부미소장국, 푸실리오리엔탈샐러드, 깍두기</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        3,500원
+                    </div>
+                </div>
             </div>
             </section>
             <section class="mdl-layout__tab-panel" id="fixed-tab-3">
             <div class="page-content">
-                <p>준비중입니다.</p>
+               <hr>
+                <div class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>출발 시간</th>
+                <th>남은 시간</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>07:40</td><td><span id="Countdown1" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">7</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>2</td><td>07:50</td><td><span id="Countdown2" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">7</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>3</td><td>08:00</td><td><span id="Countdown3" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">7</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>4</td><td>08:10</td><td><span id="Countdown4" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>5</td><td>08:20</td><td><span id="Countdown5" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>6</td><td>08:25</td><td><span id="Countdown6" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>7</td><td>08:30</td><td><span id="Countdown7" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>8</td><td>08:33</td><td><span id="Countdown8" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>9</td><td>08:36</td><td><span id="Countdown9" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>10</td><td>08:39</td><td><span id="Countdown10" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>11</td><td>08:42</td><td><span id="Countdown11" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>12</td><td>08:45</td><td><span id="Countdown12" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>13</td><td>08:48</td><td><span id="Countdown13" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>14</td><td>08:51</td><td><span id="Countdown14" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>15</td><td>08:54</td><td><span id="Countdown15" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>16</td><td>08:57</td><td><span id="Countdown16" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>17</td><td>09:00</td><td><span id="Countdown17" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>18</td><td>09:05</td><td><span id="Countdown18" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>19</td><td>09:10</td><td><span id="Countdown19" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>20</td><td>09:15</td><td><span id="Countdown20" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>21</td><td>09:20</td><td><span id="Countdown21" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>22</td><td>09:25</td><td><span id="Countdown22" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>23</td><td>09:30</td><td><span id="Countdown23" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>24</td><td>09:33</td><td><span id="Countdown24" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>25</td><td>09:36</td><td><span id="Countdown25" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>26</td><td>09:39</td><td><span id="Countdown26" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>27</td><td>09:42</td><td><span id="Countdown27" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>28</td><td>09:45</td><td><span id="Countdown28" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>29</td><td>09:48</td><td><span id="Countdown29" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>30</td><td>09:51</td><td><span id="Countdown30" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>31</td><td>09:54</td><td><span id="Countdown31" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>32</td><td>09:57</td><td><span id="Countdown32" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>33</td><td>10:00</td><td><span id="Countdown33" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">9</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>34</td><td>10:05</td><td><span id="Countdown34" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">10</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>35</td><td>10:10</td><td><span id="Countdown35" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">10</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr><tr><td>36</td><td>10:20</td><td><span id="Countdown36" class="is-countdown"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">10</span><span class="countdown-period">시간</span></span></span></span> 후 도착 예정</td></tr>
+          </table>
+                </div>
             </div>
             </section>
-
         </main>
     </div>
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <script type="text/javascript">
+     var lorem = '오픈소스 소프트웨어 및 라이브러리를 활용하여 오픈소스 소프트웨어를 개발합니다. 다양한 오픈소스 태크놀러지 스택들을 소개하고 기본적인 사용법을 알아봅니다. 프로젝트 기반의 수업을 통해 수업시간에 다룬 오픈소스 프로젝트 및 기술들을 선택하고 조합하여 자신만의 태크 스택을 설계합니다.';
+$('#show-info').click(function () {
+    showDialog({
+        title: '오픈소스SW개발',
+        text: lorem
+    })
+});
+
+/* library */
+function showLoading() {
+    // remove existing loaders
+    $('.loading-container').remove();
+    $('<div id="orrsLoader" class="loading-container"><div><div class="mdl-spinner mdl-js-spinner is-active"></div></div></div>').appendTo("body");
+
+    componentHandler.upgradeElements($('.mdl-spinner').get());
+    setTimeout(function () {
+        $('#orrsLoader').css({opacity: 1});
+    }, 1);
+}
+
+function hideLoading() {
+    $('#orrsLoader').css({opacity: 0});
+    setTimeout(function () {
+        $('#orrsLoader').remove();
+    }, 400);
+}
+
+function showDialog(options) {
+    options = $.extend({
+        id: 'orrsDiag',
+        title: null,
+        text: null,
+        negative: false,
+        positive: false,
+        cancelable: true,
+        contentStyle: null,
+        onLoaded: false
+    }, options);
+
+    // remove existing dialogs
+    $('.dialog-container').remove();
+    $(document).unbind("keyup.dialog");
+
+    $('<div id="' + options.id + '" class="dialog-container"><div class="mdl-card mdl-shadow--16dp"></div></div>').appendTo("body");
+    var dialog = $('#orrsDiag');
+    var content = dialog.find('.mdl-card');
+    if (options.contentStyle != null) content.css(options.contentStyle);
+    if (options.title != null) {
+        $('<h5>' + options.title + '</h5>').appendTo(content);
+    }
+    if (options.text != null) {
+        $('<p>' + options.text + '</p>').appendTo(content);
+    }
+    if (options.negative || options.positive) {
+        var buttonBar = $('<div class="mdl-card__actions dialog-button-bar"></div>');
+        if (options.negative) {
+            options.negative = $.extend({
+                id: 'negative',
+                title: 'Cancel',
+                onClick: function () {
+                    return false;
+                }
+            }, options.negative);
+            var negButton = $('<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="' + options.negative.id + '">' + options.negative.title + '</button>');
+            negButton.click(function (e) {
+                e.preventDefault();
+                if (!options.negative.onClick(e))
+                    hideDialog(dialog)
+            });
+            negButton.appendTo(buttonBar);
+        }
+        if (options.positive) {
+            options.positive = $.extend({
+                id: 'positive',
+                title: 'OK',
+                onClick: function () {
+                    return false;
+                }
+            }, options.positive);
+            var posButton = $('<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="' + options.positive.id + '">' + options.positive.title + '</button>');
+            posButton.click(function (e) {
+                e.preventDefault();
+                if (!options.positive.onClick(e))
+                    hideDialog(dialog)
+            });
+            posButton.appendTo(buttonBar);
+        }
+        buttonBar.appendTo(content);
+    }
+    componentHandler.upgradeDom();
+    if (options.cancelable) {
+        dialog.click(function () {
+            hideDialog(dialog);
+        });
+        $(document).bind("keyup.dialog", function (e) {
+            if (e.which == 27)
+                hideDialog(dialog);
+        });
+        content.click(function (e) {
+            e.stopPropagation();
+        });
+    }
+    setTimeout(function () {
+        dialog.css({opacity: 1});
+        if (options.onLoaded)
+            options.onLoaded();
+    }, 1);
+}
+
+function hideDialog(dialog) {
+    $(document).unbind("keyup.dialog");
+    dialog.css({opacity: 0});
+    setTimeout(function () {
+        dialog.remove();
+    }, 400);
+} 
+    </script>
 </body>
 </html>
