@@ -53,13 +53,38 @@ app.post('/add', (req, res) => {
 
 app.get('/:id', (req, res) => {
     Memo.findOne({'_id': req.params.id}, (err, doc) => {
-        res.send(doc.title + '<br>' + doc.body + '<br>' + doc.date + '<br>');
+        res.send(doc.title + '<br>' + doc.body + '<br>' + doc.date + '<br>' + '<a href="/'+doc._id+'/delete">삭제</a>' + '<br>' +'<a href="/'+doc._id+'/edit">수정</a>');
     });
 });
 
-app.delete('/:id', (req, res) => {
+app.get('/:id/delete', (req, res) => {
     Memo.remove({'_id': req.params.id}, (err, output) => {
         res.redirect('/');
+    });
+});
+
+app.get('/:id/edit', (req, res) => {
+    Memo.findOne({'_id': req.params.id}, (err, doc) => {
+        res.send(`
+        <form action="/`+req.params.id+`/edit" method="post">
+            <p><input type="text" name="title" id="title" value="`+ doc.title +`"></p>
+            <p><textarea name="body" id="body">`+ doc.body +`</textarea></p>
+            <p><input type="submit"></p>
+        </form>
+    `);
+    });
+});
+
+app.post('/:id/edit', (req, res) => {
+    Memo.findById(req.params.id, (err, doc) => {
+        doc.title = req.body.title;
+        doc.body = req.body.body;
+        doc.date.$date = Date.now;
+        doc.save((err, doc) => {
+            if (err) console.log(err);
+            console.log(doc);
+            res.redirect('/'+req.params.id);
+        });
     });
 });
 
