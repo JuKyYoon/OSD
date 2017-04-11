@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title New
+    body
+        form(action='/'+memo._id+'/edit', method='post')
+            p
+                input#title(type='text', name='title', value=memo.title)
+            p
+                textarea#body(name='body')= memo.body
+            p
+                input(type='submit')
+

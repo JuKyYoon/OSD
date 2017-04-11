@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        title List
+    body
+        each memo in memos
+            p
+                a(href='/'+memo._id)= memo.title
+        a(href='/add') Add
+

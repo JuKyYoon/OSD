@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Memo
+    body
+        p= memo.title
+        p= memo.body
+        p
+            a(href='/'+memo._id+'/edit') Edit
+        p
+            a(href='/'+memo._id+'/delete') Delete
+        p
+            a(href='/') Back
+
